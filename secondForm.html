@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./secondFormStyles.css">
-  </head>
-
-  <body>
-    <!-- iframe -->
-    <!-- youtube -->
-    <!-- origin/embed/video_id?autplay=1  -->
-    <!-- width , height -->
-    <!-- <iframe src="https://www.youtube.com/embed/ypJqtQ3xr7M?autplay=1" allow="autplay"></iframe> -->
-    <!-- <p></p>
-table ,th,tr,td
-img,a,br,strong,iframe,
--->
-    <!-- form will help you to record info and send it to server -->
-    <!-- singup and registration -->
-    <!-- firstname,lastname,dob,email,password,picture,mobile,gender -->
+    <title>Registration Form</title>
+</head>
+<body>
+    <!-- Page Title -->
+    <h1 class="page-title">Registration Form</h1>
+    <!-- Registration Form -->
     <form>
-      <!-- Picture Upload -->
+      <!-- Profile Picture -->
       <div class="form-group">
         <label for="picture">Profile Picture:</label>
         <input type="file" id="picture" name="picture" accept="image/*" />
       </div>
+      <!-- First Name Input -->
       <div class="form-group">
-        <label for="firstname">First Name</label>
-        <input type="text" id="firstname" placeholder="First name here" />
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" placeholder="Enter your first name" />
       </div>
+      <!-- Last Name Input -->
       <div class="form-group">
-        <label for="lastname">Last Name</label>
-        <input type="text" id="lastname" placeholder="Last name here" />
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" placeholder="Enter your last name" />
       </div>
+      <!-- Date of Birth Input -->
       <div class="form-group">
-        <label for="dob">Data of Birth</label>
+        <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" />
       </div>
+      <!-- Email Input -->
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Email here" id="email" />
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email" id="email" />
       </div>
+      <!-- Password Input -->
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Password here" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" />
       </div>
+      <!-- Mobile Number Input -->
       <div class="form-group">
-        <label for="number">Mobile Number</label>
-        <input type="tel" id="number" placeholder="format +91" />
+        <label for="number">Mobile Number:</label>
+        <input type="tel" id="number" placeholder="Enter your mobile number (+91 format)" />
       </div>
-      <!-- Gender -->
+      <!-- Gender Selection -->
       <div class="form-group">
         <label>Gender:</label>
+        <!-- Male Radio Option -->
         <label class="radio-label" for="male">
           <input type="radio" id="male" name="gender" value="male" />
           Male
         </label>
+        <!-- Female Radio Option -->
         <label class="radio-label" for="female">
           <input type="radio" id="female" name="gender" value="female" />
           Female
@@ -67,17 +65,13 @@ img,a,br,strong,iframe,
         <input type="checkbox" id="terms" name="terms" required />
         <label class="checkbox-label" for="terms">
           I accept the
-          <a
-            href="https://github.com/snehal-herovired/FSD_BATCH_10"
-            target="_blank"
-            >Terms and Conditions</a
-          ></label
-        >
+          <a href="https://github.com/snehal-herovired/FSD_BATCH_10" target="_blank">Terms and Conditions</a>
+        </label>
       </div>
       <!-- Submit Button -->
       <div class="form-group">
         <button type="submit">Register</button>
       </div>
     </form>
-  </body>
+</body>
 </html>
