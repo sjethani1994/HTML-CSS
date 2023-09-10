@@ -110,3 +110,21 @@ footer {
 .card-body {
     background: #EBE8E8;
 }
+
+.page-header {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header>h1 {
+    flex: 0.9;
+}
+
+.fa-circle-arrow-down {
+    font-size: 36px;
+}
