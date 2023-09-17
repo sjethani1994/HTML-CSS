@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Bars</title>
+    <style>
+      .bar-container {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .bar {
+        height: 20px;
+        background-color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      .bar:nth-child(1) {
+        width: 20px;
+        animation: expand1 1s ease-in-out infinite alternate;
+      }
+
+      .bar:nth-child(2) {
+        width: 30px;
+        animation: expand2 1.5s ease-in-out infinite alternate;
+      }
+
+      .bar:nth-child(3) {
+        width: 40px;
+        animation: expand3 2s ease-in-out infinite alternate;
+      }
+
+      .bar:nth-child(4) {
+        width: 50px;
+        animation: expand4 1.2s ease-in-out infinite alternate;
+      }
+
+      .bar:nth-child(5) {
+        width: 60px;
+        animation: expand5 1.8s ease-in-out infinite alternate;
+      }
+
+      .bar:nth-child(6) {
+        width: 70px;
+        animation: expand6 2.4s ease-in-out infinite alternate;
+      }
+
+      @keyframes expand1 {
+        0% {
+          width: 20px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 100px;
+          background-color: #3498db;
+        }
+      }
+
+      @keyframes expand2 {
+        0% {
+          width: 30px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 120px;
+          background-color: #3498db;
+        }
+      }
+
+      @keyframes expand3 {
+        0% {
+          width: 40px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 140px;
+          background-color: #3498db;
+        }
+      }
+
+      @keyframes expand4 {
+        0% {
+          width: 50px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 80px;
+          background-color: #3498db;
+        }
+      }
+
+      @keyframes expand5 {
+        0% {
+          width: 60px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 160px;
+          background-color: #3498db;
+        }
+      }
+
+      @keyframes expand6 {
+        0% {
+          width: 70px;
+          background-color: #e74c3c;
+        }
+        100% {
+          width: 110px;
+          background-color: #3498db;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar-container">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </body>
+</html>

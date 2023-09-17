@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/405f53a43e.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .custom-div {
+        position: relative;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+      .hidden-div {
+        display: none;
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        border-radius: 50%;
+      }
+
+      .custom-div::before {
+        content: "\f111";
+        font-family: FontAwesome;
+        margin-right: 5px;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        color: white;
+      }
+
+      .custom-div:focus::before,
+      .custom-div:active::before {
+        content: "\f112";
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="custom-div" tabindex="0"></div>
+  </body>
+</html>
