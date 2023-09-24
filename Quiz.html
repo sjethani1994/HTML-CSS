@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <style>
+      /* Style the list as a horizontal inline list */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px; /* Add spacing between radio button and text */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quiz-container">
+      <h1>Quiz</h1>
+      <div id="question"></div>
+      <ul id="options"></ul>
+      <button id="next-button">Next</button>
+      <button id="submit-button">Submit Quiz</button>
+    </div>
+    <div id="result-container">
+        <h5 id="score"></h5>
+    </div>
+    <script src="quiz.js"></script>
+  </body>
+</html>

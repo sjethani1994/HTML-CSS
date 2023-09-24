@@ -15,6 +15,10 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/405f53a43e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <style>
     .nav-link {
@@ -22,23 +26,34 @@
     }
 
     .navbar .navbar-brand {
-        position: absolute;
-        left: 25%;
-        transform: translateX(-50%);
+      position: absolute;
+      left: 25%;
+      transform: translateX(-50%);
     }
 
     @media (max-width: 980px) {
-        /* Media query for screens smaller than 980px */
-        .navbar .navbar-brand {
-            position: static;
-            transform: none;
-        }
+      /* Media query for screens smaller than 980px */
+      .navbar .navbar-brand {
+        position: static;
+        transform: none;
+      }
+    }
+
+    .fa-brands {
+      font-size: 18px;
+    }
+
+    .welcome-section {
+      background-color: #9de879;
+      color: white;
+      border-radius: unset;
+      border: none;
     }
   </style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Profolio</a>
+        <a class="navbar-brand" href="#">My Portfolio</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -59,7 +74,7 @@
               <a class="nav-link" aria-current="page" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Protfolio</a>
+              <a class="nav-link" aria-current="page" href="#">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Contact</a>
@@ -68,13 +83,140 @@
         </div>
       </div>
     </nav>
-    <div class="card text-center" style="background-color: #9de879;">
-      <div class="card-header border-0 bg-transparent fs-3 fw-bolder">
-        Welcome To My Protfolio
+    <div class="card text-center welcome-section">
+      <div class="card-header border-0 bg-transparent fs-4 fw-bolder">
+        Welcome To My Portfolio
       </div>
-      <div class="card-body">
-        <h5 class="card-title">A Show Case Of My Skills.</h5>
+      <div class="card-body pt-0">
+        <h5 class="card-title">A Showcase Of My Skills.</h5>
+        <div class="icons pt-1">
+          <i class="fa-brands fa-facebook-f me-3"></i>
+          <i class="fa-brands fa-twitter me-3"></i>
+          <i class="fa-brands fa-instagram me-3"></i>
+          <i class="fa-brands fa-linkedin me-3"></i>
+          <i class="fa-brands fa-github me-3"></i>
+        </div>
       </div>
     </div>
+    <section class="body">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-5">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td>Name:</td>
+                  <td>Sumit Jethani</td>
+                </tr>
+                <tr>
+                  <td>Age:</td>
+                  <td>29</td>
+                </tr>
+                <tr>
+                  <td>Location:</td>
+                  <td>Dhule, Maharashtra</td>
+                </tr>
+                <tr>
+                  <td>Occupation:</td>
+                  <td>Software Engineer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-3">
+            <img
+              class="w-100"
+              src="./default-avatar-profile.jpg"
+              alt="avatar-profile"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-1"></div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-header">Project 1</div>
+              <div class="card-body">
+                <h5 class="card-title">CXONE Supervisor</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-header">Project 2</div>
+              <div class="card-body">
+                <h5 class="card-title">Enrollment Portal</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-header">Project 3</div>
+              <div class="card-body">
+                <h5 class="card-title">Spark Portal</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+        <div class="container mt-5 mb-3">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">Contact Us</div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your Email"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        rows="5"
+                        placeholder="Your Message"
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
