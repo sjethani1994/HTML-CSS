@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      var test = function sample(x = 50, y = 50) {
+        var total = x + y;
+        return total;
+      };
+
+      function display(a, b) {
+        console.log("The program will dispay the sum of two numbers.");
+        return test(a, b);
+      }
+      console.log(display(20, 20));
+
+      /* JavaScript function that takes an array as input and counts the occurrences of each element in the array. Return an object with element counts. */
+      function countOccurrences(arr) {
+        // Create an object to store element counts
+        const elementCount = {};
+
+        // Iterate through the input array
+        for (let i = 0; i < arr.length; i++) {
+          const currentElement = arr[i];
+
+          // Check if the element already exists in the count object
+          if (elementCount[currentElement]) {
+            // If it exists, increment the count
+            elementCount[currentElement] += 1;
+          } else {
+            // If it doesn't exist, initialize the count to 1
+            elementCount[currentElement] = 1;
+          }
+        }
+
+        // Return the object containing element counts
+        return elementCount;
+      }
+
+      const inputArray = [1, 2, 3, 2, 4, 1, 5];
+      const elementCounts = countOccurrences(inputArray);
+
+      // Convert the result to a JSON string for clear representation
+      console.log(JSON.stringify(elementCounts));
+
+      /* JavaScript function that takes an array of numbers as input and calculates the average value of the numbers */
+      function calculateAverage(arr) {
+        if (arr.length === 0) {
+          return "0.0 (empty array)"; // Handle the case when the array is empty.
+        }
+
+        const arrayLength = arr.length;
+        let sum = 0;
+
+        for (const number of arr) {
+          sum += number;
+        }
+
+        const average = (sum / arrayLength).toFixed(1); // Format the average to one decimal place
+        return `${average} (average of ${arr.join(", ")})`;
+      }
+
+      const numbers = [5, 10, 15, 20];
+      const average = calculateAverage(numbers);
+      console.log("Output:", average);
+
+      /* Array Sorting */
+      function sortArray(arr) {
+        const n = arr.length;
+        let swapped;
+        do {
+          swapped = false;
+          for (let i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+              const temp = arr[i];
+              arr[i] = arr[i + 1];
+              arr[i + 1] = temp;
+              swapped = true;
+            }
+          }
+        } while (swapped);
+
+        return arr;
+      }
+
+      const unSortedArray = [7, 2, 9, 1, 5];
+      const sortedArray = sortArray(unSortedArray);
+      console.log("Sorted Array: " + JSON.stringify(sortedArray));
+
+      /* Write a program that takes a range of numbers as input and counts the number of prime numbers within that range. */
+
+      function isPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        if (number <= 3) {
+          return true;
+        }
+        if (number % 2 === 0 || number % 3 === 0) {
+          return false;
+        }
+
+        for (let i = 5; i * i <= number; i += 6) {
+          if (number % i === 0 || number % (i + 2) === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      function countPrimesInRange(start, stop) {
+        let count = 0;
+        for (let i = start; i < stop; i++) {
+          if (isPrime(i)) {
+            count++;
+          }
+        }
+        return count;
+      }
+      const start = 1;
+      const stop = 20;
+      const primeCount = countPrimesInRange(start, stop);
+      console.log(
+        `Number of prime numbers between ${start} and ${stop}: ${primeCount}`
+      );
+    </script>
+  </body>
+</html>

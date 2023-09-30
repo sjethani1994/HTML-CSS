@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <script>
+      // Create an array of strings and an array of numbers
+      var stringArr = new Array("a", "b", "c", "d", "e", "f", "a");
+      var numberArr = new Array(1, 2, 3, 4, 5, 6);
+      var str = "This is a string";
+
+      // Using a for...in loop to iterate over the indices (property names) of the numberArr array
+      // Note: for...in is typically used with objects, not arrays.
+      for (const index in numberArr) {
+        console.log(
+          "Using for...in loop to iterate over indices - Index:",
+          index
+        );
+      }
+
+      // Using a for...of loop to iterate over the values of the numberArr array
+      // Note: for...of is designed for iterating over iterable objects like arrays.
+      for (const value of numberArr) {
+        console.log(
+          "Using for...of loop to iterate over values - Value:",
+          value
+        );
+      }
+
+      // Adding elements to the end and beginning of the numberArr array using push and unshift
+      numberArr.push(7); // push adds an element to the end of numberArr
+      numberArr.unshift(0); // unshift adds an element to the beginning of numberArr
+      console.log("After push and unshift:", numberArr); // Output the updated array
+
+      // Removing an element from the numberArr array using splice
+      numberArr.splice(0, 1); // Remove one element from index 0
+      console.log("After splice(0, 1):", numberArr); // Output the updated array
+
+      // Adding elements at a specific position using splice
+      numberArr.splice(1, 0, 8, 9, 10); // Add elements 8, 9, 10 at index 1
+      console.log("After splice(1, 0, 8, 9, 10):", numberArr); // Output the updated array
+
+      // Replacing elements at a specific position using splice
+      numberArr.splice(1, 1, 11, 12); // Replace element at index 1 with 11 and 12
+      console.log("After splice(1, 1, 11, 12):", numberArr); // Output the updated array
+
+      // Using the join() method to join / convert array elements into a string
+      console.log(
+        "Joining stringArr with default separator:",
+        stringArr.join()
+      );
+      console.log(
+        "Joining stringArr with a custom separator:",
+        stringArr.join("-")
+      );
+
+      // Using the split() method to split a string into an array
+      console.log("Splitting a string into an array:", str.split(" "));
+
+      // Concatenating two arrays
+      var arr3 = stringArr.concat(numberArr);
+      console.log("Concatenated array:", arr3);
+
+      // Finding the index of the first and last occurrence of "a" in stringArr
+      console.log(
+        "Index of first occurance 'a' in stringArr:",
+        stringArr.indexOf("a")
+      );
+      console.log(
+        "Index of last occurance 'a' in stringArr:",
+        stringArr.lastIndexOf("a")
+      );
+      console.log(stringArr.includes("b", "c"));
+    </script>
+  </body>
+</html>
