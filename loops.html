@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <script>
+      //     var i = 5;
+      //     do {
+      //       i++;
+      //       console.log(i);
+      //     } while (i <= 10);
+
+      //   for (let i = 5; i <= 10; i++) {
+      //     console.log(i);
+      //   }
+
+      //   var n = 10;
+      //   var fibonacciSeries = [0, 1];
+
+      //   for (let i = 2; i < n; i++) {
+      //     var nextValue = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+      //     fibonacciSeries.push(nextValue);
+      //   }
+
+      //   document.write(fibonacciSeries);
+
+      //   for (let i = 1; i <= 100; i++) {
+      //     if (i % 3 === 0 && i % 7 === 0) {
+      //       console.log(`${i} is a multiple of 3 and 7`);
+      //     } else if (i % 3 === 0) {
+      //       console.log(`${i} is a multiple of 3`);
+      //     } else if (i % 7 === 0) {
+      //       console.log(`${i} is a multiple of 7`);
+      //     } else {
+      //       console.log(i);
+      //     }
+      //   }
+      function isPalindrome(str) {
+        str = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+        return str === str.split("").reverse().join("");
+      }
+
+      const testString = "racecar";
+      if (isPalindrome(testString)) {
+        console.log(`${testString} is a palindrome.`);
+      } else {
+        console.log(`${testString} is not a palindrome.`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1: Temperature Conversion
+      // Write a JavaScript function that takes an array of temperatures in Celsius and uses the `map` method to convert each temperature to Fahrenheit using the formula `(Celsius * 9/5) + 32`. Return a new array containing the converted temperatures.
+      const celsiusTemperatures = [20, 40, 100, 150];
+      const fahrenheitTemperatures = celsiusTemperatures.map((celsius) => {
+        return (celsius * 9) / 5 + 32;
+      });
+      console.log(
+        "Temperature Conversion Using Map function " +
+          JSON.stringify(fahrenheitTemperatures)
+      );
+
+      // 2: Calculate Total Expenses
+      // Write a JavaScript function that takes an array of expenses and uses the `reduce` method to calculate the total amount spent. Return the total amount.
+      const expenses = [200, 300, 250, 150, 100];
+      const totalAmount = expenses.reduce((accumulator, currentExpense) => {
+        return accumulator + currentExpense;
+      }, 0);
+      console.log("Reduce Method Result " + totalAmount);
+
+      // 3: Filtering Passing Scores
+      // Write a JavaScript function that takes an array of test scores and uses the `filter` method to return a new array containing only the passing scores (scores greater than or equal to 60).
+      const scores = [45, 78, 53, 60, 62, 37, 91];
+      const filteredArray = scores.filter((num) => num >= 60);
+      console.log("Filter Method Result " + JSON.stringify(filteredArray));
+
+      // 4: Logging Names
+      // Write a JavaScript function that takes an array of names and uses the `forEach` method to log each name to the console.
+      const namesArray = ["Alice", "Bob", "Charlie", "David"];
+      namesArray.forEach((name) => {
+        console.log("Name:- " + name);
+      });
+
+      // 5: Sorting Numbers
+      // Write a JavaScript function that takes an array of numbers and uses the `sort` method to sort the numbers in ascending order. Return the sorted array.
+      const unSortedArray = [91, 45, 78, 53, 60, 62, 37];
+      const sortedArray = unSortedArray.sort((a, b) => b - a);
+      console.log("Sorting Method Result " + JSON.stringify(sortedArray));
+
+      //  6: Fill an Array
+      // Write a JavaScript function that takes an array of zeros and uses the `fill` method to fill the array with a specified value. Return the modified array.
+
+      const arrOfZeros = [0, 0, 0, 0, 0];
+      const filledArray = arrOfZeros.fill(1);
+      console.log(filledArray);
+
+      // 7: Checking for Even Numbers
+      // Write a JavaScript function that takes an array of numbers and uses the `some` method to check if the array contains at least one even number. Return `true` if an even number is found, otherwise `false`.
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const hasEven = numbers.some((number) => number % 2 === 0);
+      console.log("Some Method Output ", hasEven);
+
+      // 8: Checking for All Passes
+      // Write a JavaScript function that takes an array of test scores and uses the `every` method to check if all the scores are passing (scores greater than or equal to 60). Return `true` if all scores are passing, otherwise `false`.
+
+      const testScores = [91, 65, 78, 63, 60, 62, 67];
+      const allPassing = testScores.every((score) => score >= 60);
+      console.log("Are all test scores passing?", allPassing);
+      
+      // 9: Flatten Nested Arrays
+      // Write a JavaScript function that takes an array containing nested arrays and uses the `flat` method to flatten the array (remove nesting). Return a single-level array.
+      const nestedArray = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9, [10, 11]],
+      ];
+      const flatten = nestedArray.flat(2);
+      console.log("Flat Method Result: ", flatten);
+
+      // 10: Mapping and Flattening
+      // Write a JavaScript function that takes an array of words and uses the `flatMap` method to split each word into its individual characters and return a single-level array of characters.
+      const wordArray = ["Sumit", "Jethani"];
+      const individualCharactersArray = wordArray.flatMap((word) =>
+        word.split("")
+      );
+      console.log("Individual Characters Array: ", individualCharactersArray);
+    </script>
+    </script>
+  </body>
+</html>

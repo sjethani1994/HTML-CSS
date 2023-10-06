@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics of Javascript</title>
+  </head>
+  <body>
+    <script>
+      /* 
+        Question 1: Manipulating array using Map and Filter and Reduce
+        Write a program using your JavaScript Skills to print the list of Such Customer Names along with their purchase details. 
+      */
+      const customerData = [
+        { customerID: 1, customerName: "John Doe", totalBillingAmount: 2500 },
+        { customerID: 2, customerName: "Jane Smith", totalBillingAmount: 3200 },
+        {
+          customerID: 3,
+          customerName: "Alice Johnson",
+          totalBillingAmount: 2800,
+        },
+        {
+          customerID: 4,
+          customerName: "Bob Anderson",
+          totalBillingAmount: 4000,
+        },
+        { customerID: 5, customerName: "Eve Davis", totalBillingAmount: 3500 },
+        {
+          customerID: 6,
+          customerName: "Michael Wilson",
+          totalBillingAmount: 4500,
+        },
+        {
+          customerID: 7,
+          customerName: "Olivia Brown",
+          totalBillingAmount: 3200,
+        },
+        { customerID: 8, customerName: "David Lee", totalBillingAmount: 2800 },
+      ];
+
+      const highValueCustomerDetails = customerData
+        .filter((customer) => customer.totalBillingAmount >= 3000)
+        .map((customer) => ({
+          customerName: customer.customerName,
+          totalBillingAmount: customer.totalBillingAmount,
+        }));
+
+      console.log("High-Value Customer Details:", highValueCustomerDetails);
+
+      /* Question 2:- Valid Sudoku */
+      function isValidSudoku(board) {
+        // Helper function to check if an array contains duplicate values
+        function hasDuplicates(arr) {
+          const seen = new Set();
+          for (const num of arr) {
+            if (num !== "." && seen.has(num)) {
+              return true;
+            }
+            seen.add(num);
+          }
+          return false;
+        }
+
+        // Check rows
+        for (let row = 0; row < 9; row++) {
+          if (hasDuplicates(board[row])) {
+            return false;
+          }
+        }
+
+        // Check columns
+        for (let col = 0; col < 9; col++) {
+          const column = [];
+          for (let row = 0; row < 9; row++) {
+            column.push(board[row][col]);
+          }
+          if (hasDuplicates(column)) {
+            return false;
+          }
+        }
+
+        // Check 3x3 sub-boxes
+        for (let boxRow = 0; boxRow < 3; boxRow++) {
+          for (let boxCol = 0; boxCol < 3; boxCol++) {
+            const box = [];
+            for (let row = 3 * boxRow; row < 3 * (boxRow + 1); row++) {
+              for (let col = 3 * boxCol; col < 3 * (boxCol + 1); col++) {
+                box.push(board[row][col]);
+              }
+            }
+            if (hasDuplicates(box)) {
+              return false;
+            }
+          }
+        }
+
+        return true; // If all checks pass, the board is valid
+      }
+
+      const board = [
+        ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+        ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+        [".", "9", "8", ".", ".", ".", ".", "6", "."],
+        ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+        ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+        ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+        [".", "6", ".", ".", ".", ".", "2", "8", "."],
+        [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+        [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+      ];
+
+      console.log(isValidSudoku(board)); // Output: true
+    </script>
+  </body>
+</html>
