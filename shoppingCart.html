@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your description here" />
     <title>Shopping Cart</title>
     <!-- Include Bootstrap CSS -->
     <link
@@ -22,176 +23,77 @@
       src="https://kit.fontawesome.com/405f53a43e.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      /* Reset margin and padding for the whole document */
-      body,
-      h1,
-      h2,
-      h3,
-      p,
-      ul,
-      li {
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Apply a flex display to the body */
-      body {
-        display: flex;
-        flex-direction: column; /* Stack children vertically */
-      }
-
-      /* Header Styles */
-      .header-section {
-        background-color: #343a40;
-        color: white;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      /* Responsive Header Styles */
-      @media (max-width: 768px) {
-        .header-section {
-          flex-direction: column; /* Stack items vertically */
-          align-items: flex-start; /* Align items to the left */
-        }
-
-        .header-section .container-fluid {
-          text-align: center; /* Center the text on small screens */
-          margin-top: 10px; /* Add some spacing at the top */
-        }
-
-        .header-section ul {
-          list-style: none; /* Remove list bullets */
-          padding: 0;
-        }
-
-        .header-section li {
-          margin-bottom: 10px; /* Add spacing between list items */
-        }
-      }
-
-      .header-section-second {
-        background-color: #f3c231;
-        color: black;
-        padding: 10px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100px;
-      }
-
-      .sub-text {
-        float: right;
-        margin-top: 3px;
-        font-size: 14px;
-      }
-
-      .search-container {
-        float: right;
-      }
-
-      input[type="text"] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-        border: none;
-      }
-
-      .search-container button {
-        float: right;
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #ddd;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-      }
-
-      .search-container button:hover {
-        background: #ccc;
-      }
-
-      @media screen and (max-width: 600px) {
-        .search-container {
-          float: none;
-          margin-top: 10px;
-        }
-        a,
-        input[type="text"],
-        .search-container button {
-          float: none;
-          display: block;
-          text-align: left;
-          width: 100%;
-          margin: 0;
-          padding: 14px;
-        }
-        input[type="text"] {
-          border: 1px solid #ccc;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-section-second ul {
-          flex-direction: column; /* Stack items vertically */
-          margin-top: 10px;
-        }
-      }
-    </style>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" type="text/css" href="./shoppingCartStyles.css" />
   </head>
   <body>
     <div id="main-container">
       <!-- First Header Section -->
       <div class="header-section">
         <div class="container-fluid d-flex justify-content-around">
-          <a class="navbar-brand mt-2" href="#">Welcome to Shopping Store</a>
+          <!-- Brand and Navigation Links -->
+          <a title="welcome" class="navbar-brand mt-2" href="#"
+            >Welcome to Shopping Store</a
+          >
           <ul class="list-unstyled d-flex m-2">
             <!-- Navigation links -->
             <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">Track Order</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">About</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">Our Stores</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">Contact</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">Help & FAQs</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">
-                <img
-                  src="./assests/india.png"
-                  alt="India flag"
-                  style="width: 20px"
-                />
-                IND</a
+              <a
+                title="trackOrder"
+                class="nav-link"
+                aria-current="page"
+                href="#"
+                >Track Order</a
               >
             </li>
             <li class="nav-item me-4">
-              <a class="nav-link" aria-current="page" href="#">ENG</a>
+              <a title="about" class="nav-link" aria-current="page" href="#"
+                >About</a
+              >
+            </li>
+            <li class="nav-item me-4">
+              <a title="stores" class="nav-link" aria-current="page" href="#"
+                >Our Stores</a
+              >
+            </li>
+            <li class="nav-item me-4">
+              <a title="contact" class="nav-link" aria-current="page" href="#"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item me-4">
+              <a title="FAQ's" class="nav-link" aria-current="page" href="#"
+                >Help & FAQs</a
+              >
+            </li>
+            <li class="nav-item me-4">
+              <a title="flag" class="nav-link" aria-current="page" href="#">
+                <img
+                  src="./assests/india.png"
+                  alt="India flag"
+                  class="indian-flag"
+                />
+                IND
+              </a>
+            </li>
+            <li class="nav-item me-4">
+              <a title="ENG" class="nav-link" aria-current="page" href="#"
+                >ENG</a
+              >
             </li>
             <!-- Social media links -->
             <li class="nav-item ms-5">
-              <a class="nav-link" aria-current="page" href="#">
+              <a title="facebook" class="nav-link" aria-current="page" href="#">
                 <i class="fa-brands fa-facebook-f me-3"></i>
               </a>
             </li>
             <li class="nav-item ms-2">
-              <a class="nav-link" aria-current="page" href="#">
+              <a title="twitter" class="nav-link" aria-current="page" href="#">
                 <i class="fa-brands fa-twitter me-3"></i>
               </a>
             </li>
             <li class="nav-item ms-2">
-              <a class="nav-link" aria-current="page" href="#">
+              <a title="linkedin" class="nav-link" aria-current="page" href="#">
                 <i class="fa-brands fa-linkedin me-3"></i>
               </a>
             </li>
@@ -203,53 +105,227 @@
         <div class="container-fluid row">
           <div class="col-1"></div>
           <div class="col-2">
-            <a class="navbar-brand" href="#">
+            <a title="ShoppingGO" class="navbar-brand" href="#">
               <h2>ShoppingGO</h2>
               <sub class="sub-text">E-Commerce</sub>
             </a>
           </div>
-          <div class="col-2"></div>
-          <div class="col-5">
-            <div class="search-container">
-                <form action="/action_page.php">
-                  <input type="text" placeholder="Search.." name="search" />
-                  <button type="submit">Search</button>
-                </form>
+
+          <div class="col-5 d-flex align-items-start">
+            <div class="search-container w-100">
+              <div class="row">
+                <div class="col-md-12">
+                  <form action="/action_page.php" class="d-flex">
+                    <input
+                      type="text"
+                      placeholder="Search.."
+                      name="search"
+                      class="form-control no-border-radius"
+                    />
+                    <button type="submit" class="btn btn-dark">Search</button>
+                  </form>
+                </div>
               </div>
+            </div>
           </div>
-          <div class="col-2">
+          <div
+            class="col-4 d-flex m-0 align-items-center justify-content-start"
+          >
             <ul class="list-unstyled d-flex">
-              <!-- Search bar -->
-              <!-- <li class="nav-item me-4">
-                <a class="nav-link" aria-current="page" href="#">
-                  <div class="search-container">
-                    <form action="/action_page.php">
-                      <input type="text" placeholder="Search.." name="search" />
-                      <button type="submit">Search</button>
-                    </form>
-                  </div>
-                </a>
-              </li> -->
-              <!-- Social media links -->
-              <li class="nav-item ms-5">
-                <a class="nav-link" aria-current="page" href="#">
-                  <i class="fa-brands fa-facebook-f me-3"></i>
+              <li class="nav-item">
+                <a
+                  title="headphones"
+                  class="nav-link"
+                  aria-current="page"
+                  href="#"
+                >
+                  <i class="fa-solid fa-headphones me-3"></i>
                 </a>
               </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" aria-current="page" href="#">
-                  <i class="fa-brands fa-twitter me-3"></i>
+              <li class="nav-item me-5">
+                <a
+                  title="call-us"
+                  class="nav-link"
+                  aria-current="page"
+                  href="#"
+                >
+                  <p class="call-us">Call Us Now</p>
+                  <sub class="phone-number">+001 5827918</sub>
                 </a>
               </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" aria-current="page" href="#">
-                  <i class="fa-brands fa-linkedin me-3"></i>
+              <li class="nav-item ms-3">
+                <a title="user" class="nav-link" aria-current="page" href="#">
+                  <i class="fa-regular fa-user me-3 infoLinks"></i>
+                </a>
+              </li>
+              <li class="nav-item ms-3">
+                <a title="heart" class="nav-link" aria-current="page" href="#">
+                  <i class="fa-regular fa-heart me-3 infoLinks"></i>
+                </a>
+              </li>
+              <li class="nav-item ms-3">
+                <a
+                  title="bag-shopping"
+                  class="nav-link"
+                  aria-current="page"
+                  href="#"
+                >
+                  <i class="fa-solid fa-bag-shopping me-3 infoLinks"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <!-- Carousel Section -->
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide coursel-section"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100 carousel-img"
+              src="./assests/lifestyle-shopping.png"
+              alt="First slide"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards Section -->
+      <div class="cards-section mt-4">
+        <div class="row justify-content-around">
+          <div class="col-sm-0 col-lg-1"></div>
+          <!-- Card 1 -->
+          <div class="col-sm-12 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-car card-icons"></i>
+                  </div>
+                  <div class="col-10">
+                    <h5 class="card-title">Free Shipping and return</h5>
+                    <p class="card-text">
+                      Free Shipping on all orders over $49.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-sm-12 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-sharp fa-solid fa-dollar-sign card-icons"></i>
+                  </div>
+                  <div class="col-10">
+                    <h5 class="card-title">Money Back Guarantee</h5>
+                    <p class="card-text">100% money back guarantee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-sm-12 col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-headset card-icons"></i>
+                  </div>
+                  <div class="col-10">
+                    <h5 class="card-title">Online Support 24/7</h5>
+                    <p class="card-text">
+                      Awesome support for 24/7 on all days.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-0 col-lg-1"></div>
+        </div>
+        <div class="row mt-5 justify-content-around">
+          <div class="col-sm-0 col-lg-1"></div>
+          <div class="col-sm-12 col-lg-3">
+            <div class="card">
+              <div class="card-body" style="background-color: #6bb2d3f2">
+                <div class="row">
+                  <div class="col-md-5 p-0">
+                    <!-- Left-aligned image -->
+                    <img
+                      src="./assests/mens_2-removebg-preview.png"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <!-- Content for the card -->
+                    <h5 class="card-title">Mens Wear</h5>
+                    <p class="card-text">Starting at just $9</p>
+                    <a href="#" class="btn btn-outline-dark mt-3">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-3 p-0">
+            <div class="card">
+              <div class="card-body" style="background-color: #ffc0cbe3">
+                <div class="row">
+                  <div class="col-md-5">
+                    <!-- Left-aligned image -->
+                    <img
+                      src="./assests/womens.png"
+                      alt="Image"
+                      style="float: right; width: 140%;"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <!-- Content for the card -->
+                    <h5 class="card-title">Womens Wear</h5>
+                    <p class="card-text">Starting at just $9</p>
+                    <a href="#" class="btn btn-outline-dark mt-3">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <div class="card">
+              <div class="card-body" style="background-color: #6bb2d3f2">
+                <div class="row">
+                  <div class="col-md-5">
+                    <!-- Left-aligned image -->
+                    <img
+                      src="./assests/cute-little-girl-shopping_624325-3892.avif"
+                      alt="Image"
+                     class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <!-- Content for the card -->
+                    <h5 class="card-title">Kids Wear</h5>
+                    <p class="card-text">Starting at just $9</p>
+                    <a href="#" class="btn btn-outline-dark mt-3">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-0 col-lg-1"></div>
+        </div>
+      </div>
+
+      <!-- Products Section -->
+      <div class="products-section"></div>
     </div>
   </body>
 </html>

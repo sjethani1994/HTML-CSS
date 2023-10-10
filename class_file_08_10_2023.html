@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning JS DOM</title>
+    <style>
+      .heading {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo-1">
+      <h1 id="dummy-head-1" class="heading">Learning JS</h1>
+    </div>
+    <div id="demo-2">
+      <h1 id="dummy-head-2" class="heading">
+        Document Object Model <span>(DOM)</span>
+      </h1>
+      <p id="dummy-para-1">
+        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+        Lorem Ipsum Lorem Ipsum
+      </p>
+    </div>
+    <div id="items">
+      <h1 id="dummy-head-3" class="heading">Purchase Items</h1>
+      <ul>
+        <li>Curd</li>
+        <li>Shimla</li>
+        <li>Chicken</li>
+      </ul>
+    </div>
+    <button onclick="removexyz()">X</button><br /><br />
+    <input type="text" id="inp-1" /><br />
+    <button id="btn-1">Add</button><br />
+    <div>
+      <p>Hola!</p>
+      <ul id="elementOverloading">
+        Hello This is sample list:
+        <li id="li-1">Milk <button id="li-btn-1">X</button></li>
+        <li id="li-2">Milk <button id="li-btn-2">X</button></li>
+        <li id="li-3">Milk <button id="li-btn-3">X</button></li>
+        Okay!
+      </ul>
+      <ol>
+        <li>hi</li>
+      </ol>
+    </div>
+
+    <script>
+      let el = document.getElementById("dummy-head-3");
+      // console.log(el.textContent)
+      // console.log(el.innerText)
+      // console.log(el.innerHTML)
+      // el.textContent = "Hello World!"
+      // console.log(el.getAttribute('class'))
+      let el1 = document.getElementById("dummy-para-1"); //<p id="dummy-para-1">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+      el1.setAttribute("class", "heading");
+      el1.setAttribute("name", "seema");
+      // console.log(document.getElementsByTagName('button')[0])
+      // document.getElementsByTagName('button')[0].setAttribute('onclick', 'xyz()')
+      let el2 = document.getElementById("elementOverloading");
+      // let newItem = document.createElement('h2')
+      // newItem.innerText = 'Awesome Content' // <h2>Awesome Content</h2>
+      // console.log(newItem)
+
+      // let newItem2 = document.createElement('p')
+      // newItem2.innerText = 'Para Content' // <h2>Awesome Content</h2>
+      // el2.appendChild(newItem2)
+      // el2.appendChild(newItem)
+      console.log(el2.firstChild);
+      console.log(el2.firstElementChild);
+      console.log(el2.lastChild);
+      console.log(el2.lastElementChild);
+      console.log(el2.nextElementSibling);
+      console.log(el2.previousElementSibling);
+      // el2.removeChild(someItem)
+
+      // function xyz(){
+      //     alert('Hi')
+      // }
+      function removexyz() {
+        let el2 = document.getElementById("elementOverloading");
+        let someItem = el2.children[1];
+        el2.removeChild(someItem);
+      }
+    </script>
+  </body>
+</html>

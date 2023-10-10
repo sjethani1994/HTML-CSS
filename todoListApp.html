@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* styles.css */
+      body {
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+
+      .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        background-color: #fff; /* Background color for list items */
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .list-group-item label {
+        flex-grow: 1;
+        margin-right: 10px;
+        word-wrap: break-word;
+      }
+
+      .list-group-item button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px; /* Increase button size */
+        font-size: 14px; /* Adjust font size */
+      }
+
+      /* Style the <ul> */
+      .list-group {
+        font-size: 19px;
+        font-weight: 500;
+        padding: 5px;
+        list-style-type: none;
+      }
+
+      .list-group li {
+        border: 1px solid lightgrey;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+
+      .total-tasks {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h1 class="mb-0">My To-Do List</h1>
+            </div>
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  id="newTask"
+                  class="form-control"
+                  placeholder="Add a new task"
+                />
+                <div class="input-group-append">
+                  <button
+                    id="addTask"
+                    class="btn btn-primary ml-2"
+                    style="width: 80px"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div class="total-tasks">
+                Total Tasks Added: <span id="totalTasks">0</span>
+                <span
+                  >Total Tasks Completed:
+                  <span id="totalTasksCompleted">0</span></span
+                >
+              </div>
+              <ul id="taskList" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Bootstrap JavaScript (optional, for Bootstrap features) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="todoList.js"></script>
+  </body>
+</html>
