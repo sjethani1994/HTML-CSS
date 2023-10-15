@@ -170,7 +170,14 @@
                   aria-current="page"
                   href="#"
                 >
-                  <i class="fa-solid fa-bag-shopping me-3 infoLinks"></i>
+                  <span class="position-relative">
+                    <i class="fa-solid fa-bag-shopping me-3 infoLinks"></i>
+                    <span
+                      class="badge rounded-pill bg-dark position-absolute top-0 translate-middle"
+                      style="left: 75%"
+                      >5</span
+                    >
+                  </span>
                 </a>
               </li>
             </ul>
@@ -195,7 +202,7 @@
       </div>
 
       <!-- Cards Section -->
-      <div class="cards-section mt-4">
+      <div class="cards-section mt-4 mb-2">
         <div class="row justify-content-around">
           <div class="col-sm-0 col-lg-1"></div>
           <!-- Card 1 -->
@@ -256,7 +263,7 @@
           <div class="col-sm-0 col-lg-1"></div>
           <div class="col-sm-12 col-lg-3">
             <div class="card">
-              <div class="card-body" style="background-color: #6bb2d3f2">
+              <div class="card-body mens-card p-0">
                 <div class="row">
                   <div class="col-md-5 p-0">
                     <!-- Left-aligned image -->
@@ -266,7 +273,7 @@
                       class="img-fluid"
                     />
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-7 cusotm-card-body">
                     <!-- Content for the card -->
                     <h5 class="card-title">Mens Wear</h5>
                     <p class="card-text">Starting at just $9</p>
@@ -278,17 +285,13 @@
           </div>
           <div class="col-sm-12 col-lg-3 p-0">
             <div class="card">
-              <div class="card-body" style="background-color: #ffc0cbe3">
+              <div class="card-body women-card p-0">
                 <div class="row">
                   <div class="col-md-5">
                     <!-- Left-aligned image -->
-                    <img
-                      src="./assests/womens.png"
-                      alt="Image"
-                      style="float: right; width: 140%;"
-                    />
+                    <img src="./assests/women_shopping.png" alt="Image" />
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-7 cusotm-card-body">
                     <!-- Content for the card -->
                     <h5 class="card-title">Womens Wear</h5>
                     <p class="card-text">Starting at just $9</p>
@@ -300,17 +303,17 @@
           </div>
           <div class="col-sm-12 col-lg-3">
             <div class="card">
-              <div class="card-body" style="background-color: #6bb2d3f2">
+              <div class="card-body kids-card p-0">
                 <div class="row">
                   <div class="col-md-5">
                     <!-- Left-aligned image -->
                     <img
-                      src="./assests/cute-little-girl-shopping_624325-3892.avif"
+                      src="./assests/kids-clothing.png"
                       alt="Image"
-                     class="img-fluid"
+                      class="img-fluid"
                     />
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-7 cusotm-card-body">
                     <!-- Content for the card -->
                     <h5 class="card-title">Kids Wear</h5>
                     <p class="card-text">Starting at just $9</p>
@@ -325,7 +328,60 @@
       </div>
 
       <!-- Products Section -->
-      <div class="products-section"></div>
+      <div class="products-section">
+        <div class="row justify-content-around">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-3">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="./assests/women_shopping.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="./assests/women_shopping.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="./assests/women_shopping.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

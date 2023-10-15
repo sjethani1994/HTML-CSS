@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Initial style for button with class .btn-2 */
+      .btn-2 {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      /* Initial style for the h2 element with id #heading */
+      #heading {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Button with inline onclick function -->
+    <button onclick="fun()">Click me</button>
+    <br /><br />
+    <button id="btn-1">Event Click</button>
+    <br /><br />
+    <button id="btn-2">Event Object</button>
+
+    <!-- Heading with id #heading -->
+    <h2 id="heading">Hi</h2>
+
+    <div id="xyz">Hi</div>
+
+    <div class="content">
+      <p>Some xyz para</p>
+      <p>Some abc paragraph</p>
+      <br />
+      <a href="">Random Link</a><br />
+      <div class="newdiv">
+        <p>hey</p>
+      </div>
+    </div>
+    <!-- Unordered list with id #superList -->
+    <ul id="superList"></ul>
+
+    <button id="btn" onclick="xyz()">Click</button>
+    <script>
+      function xyz() {
+        for (let i = 0; i < 100; i++) {
+          document.getElementById("xyz").innerText = i;
+        }
+      }
+      function abc() {
+        const el1 = document.getElementById("xyz");
+        for (let i = 0; i < 100; i++) {
+          el1.innerText = i;
+        }
+      }
+      // Select button with id btn-1 and attach click event listener
+      const button = document.getElementById("btn-1");
+
+      // Function to handle click event for button
+      function fun() {
+        alert("hello");
+        button.removeEventListener("click", fun);
+      }
+      button.addEventListener("click", fun);
+
+      // Select button with id btn-2 and attach mouseover and mouseleave event listeners
+      const btn2 = document.getElementById("btn-2");
+
+      // Event listener to increase button size on mouseover
+      btn2.addEventListener("mouseover", function (event) {
+        btn2.style.padding = "15px 25px";
+        btn2.style.fontSize = "20px";
+      });
+
+      // Event listener to revert button size on mouseleave
+      btn2.addEventListener("mouseleave", function (event) {
+        btn2.style.padding = "10px 20px";
+        btn2.style.fontSize = "16px";
+      });
+
+      // Select the heading with id heading and attach mouseover and mouseleave event listeners
+      var heading = document.getElementById("heading");
+
+      // Event listener to increase font size of heading on mouseover
+      heading.addEventListener("mouseover", function (event) {
+        heading.style.fontSize = "30px";
+      });
+
+      // Event listener to revert font size of heading on mouseleave
+      heading.addEventListener("mouseleave", function (event) {
+        heading.style.fontSize = "24px";
+      });
+
+      // Creating a document fragment to add 100 list items to the unordered list
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < 100; i++) {
+        const li = document.createElement("li");
+        li.textContent = `Item ${i + 1}`;
+        frag.appendChild(li);
+      }
+      document.getElementById("superList").appendChild(frag);
+
+      const p = document.querySelectorAll("p");
+      p.forEach((i) => console.log(i));
+    </script>
+  </body>
+</html>

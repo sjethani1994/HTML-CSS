@@ -171,3 +171,36 @@ input[type="text"] {
 .card-icons {
     font-size: 55px;
 }
+
+.mens-card {
+    background-color: #c5f0ff;
+}
+
+.mens-card img {
+    height: 240px;
+}
+
+.cusotm-card-body {
+    padding: 20px;
+}
+
+.women-card {
+    background-color: #f9ccd1;
+}
+
+.women-card img {
+    float: right;
+    height: 240px;
+    width: 100%;
+}
+
+.kids-card {
+    background-color: #ffefc3;
+}
+
+.kids-card img {
+    height: 230px;
+    margin-top: 8px;
+    width: 90%;
+    margin-left: 11px;
+}

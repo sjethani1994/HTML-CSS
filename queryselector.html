@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS styles for elements with class content and newdiv */
+        .content{
+            color: blue;
+        }
+        .newdiv{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Learning QuerySelector</h1>
+    <div class="newdiv">
+        <p>hello</p>
+    </div>
+    <div class="content">
+        <p>Some xyz para</p>
+        <p>Some abc paragraph</p><br>
+        <a href="">Random Link</a><br>
+        <div class="newdiv">
+            <p>hey</p>
+        </div>
+    </div>
+    <button id="btn-1">Click me</button>
+    <script>
+        // Using querySelector and querySelectorAll to select elements and print them in the console
+
+        // Selecting the first element with the class 'newdiv'
+        // const firstItem = document.querySelector('.newdiv')
+        // console.log(firstItem)
+
+        // Selecting the element with the id 'title'
+        // const selectId = document.querySelector('#title')
+        // console.log(selectId)
+
+        // Selecting the first 'p' element
+        // const tagSelect = document.querySelector('p')
+        // console.log(tagSelect)
+
+        // Selecting a specific 'a' element within an element with class 'content'
+        // const combineSelector = document.querySelector('.content a')
+        // console.log(combineSelector)
+
+        // Selecting a 'p' element within an element with class 'newdiv'
+        const s = document.querySelector('.newdiv p')
+        console.log(s)
+
+        // Using querySelectorAll to select all 'p' elements and printing them in the console
+        const p = document.querySelectorAll('p')
+        console.log(p)
+        p.forEach(i => console.log(i))
+
+    </script>
+    
+</body>
+</html>

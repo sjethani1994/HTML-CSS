@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        This is a parent div. 
+        <button id="btn-1">Click</button> 
+    </div><br><br>
+    
+    <script>
+        document.getElementById('parent').addEventListener('click', function(){
+            console.log('reached parent')
+        })
+        document.getElementById('btn-1').addEventListener('click', function(event){
+            console.log('button got clicked')
+        })
+        document.addEventListener('keyup', function(event){
+            console.log(event.key)
+            console.log(event.code)
+            console.log(event.altKey)
+        }) //keydown, keyup, keypress
+    </script>
+</body>
+</html>
+
+<!-- 
+1. Capturing Phase
+2. Target Phase
+3. Bubbling Phase
+
+ -->
