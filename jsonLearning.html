@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Learning</title>
+  </head>
+  <body>
+    <h1>JSON Learning</h1>
+
+    <script>
+      const userString = '{"name": "prashant", "age": 28}'; //String
+      const userObject = { name: "prashant", age: 28 }; //creation
+      const userObjectConverted = JSON.parse(userString);
+      // console.log(typeof userObjectConverted)
+      const userStringConverted = JSON.stringify(userObject);
+      // console.log(typeof userStringConverted)
+
+      console.log(userObject.age); //read specific key
+      userObject.age = 45; //update
+      // console.log(userObject)
+      // delete userObject.age //delete
+      // console.log(userObject.age)
+      userObject.id = "prashantkrdey"; //adding new key
+      console.log(userObject);
+      // let age = userObject.age
+      let { name, age } = userObject;
+      console.log(age, name);
+      age = 67;
+      console.log(userObject);
+      const car = { model: "bmw", topSpeed: 330 };
+      // const mergedData = { ...userObject, ...car} //spread operator
+      const mergedData = { ...userObject, ...car, age: 98 }; // immutable updates
+      console.log("mergedData: ", mergedData);
+
+      const userArr = [
+        {
+          name: "Gurpreet",
+          age: 18,
+        },
+        {
+          name: "Seema",
+          age: 27,
+        },
+        {
+          name: "Mohit",
+          age: 28,
+        },
+        {
+          name: "Sumit",
+          age: 29,
+        },
+      ];
+
+      const quizQuestion = {
+        id: 1,
+        questionType: "mcq",
+        question: "What is class?",
+        options: {
+          a: "template",
+          b: "instance",
+          c: "property",
+          d: "none of the above",
+        },
+        correctOption: "a",
+        marks: 2,
+      };
+      console.log(quizQuestion.options.a);
+
+      const quiz = [
+        {
+          id: 1,
+          questionType: "mcq",
+          question: "What is class?",
+          options: {
+            a: "template",
+            b: "instance",
+            c: "property",
+            d: "none of the above",
+          },
+          correctOption: "a",
+          marks: 2,
+        },
+        {
+          id: 2,
+          questionType: "mcq",
+          question: "What is class?",
+          options: {
+            a: "template",
+            b: "instance",
+            c: "property",
+            d: "none of the above",
+          },
+          correctOption: "a",
+          marks: 2,
+        },
+        {
+          id: 3,
+          questionType: "mcq",
+          question: "What is class?",
+          options: {
+            a: "template",
+            b: "instance",
+            c: "property",
+            d: "none of the above",
+          },
+          correctOption: "a",
+          marks: 2,
+        },
+      ];
+    </script>
+  </body>
+</html>

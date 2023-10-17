@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <h1>OOP in JS</h1>
+    <script>
+      // Define the Car class
+      class Car {
+        // Constructor to initialize properties
+        constructor(brand, model, color, bodyType, year, fuelType) {
+          this.brand = brand;
+          this.model = model;
+          this.color = color;
+          this.bodyType = bodyType;
+          this.year = year;
+          this.fuelType = fuelType;
+        }
+
+        // Method to calculate expiry year based on fuel type
+        expiryYear() {
+          if (this.fuelType === "petrol") {
+            console.log(this.year + 15);
+          } else {
+            console.log(this.year + 10);
+          }
+        }
+      }
+
+      // Create instances of the Car class
+      const seema = new Car("Hyundai", "Creta", "White", "SUV", 2023, "petrol");
+      seema.expiryYear(); // Calculate and log the expiry year for seema's car
+
+      const prashant = new Car(
+        "BMW",
+        "Series 5",
+        "Dark Blue",
+        "Sedan",
+        2021,
+        "diesel"
+      );
+      console.log(prashant.bodyType, seema.bodyType); // Log the body type of prashant's and seema's cars
+
+      seema.color = "blue"; // Change the color of seema's car
+      console.log(seema.color); // Log the updated color of seema's car
+
+      // Define the Supercar class that extends the Car class
+      class Supercar extends Car {
+        constructor(brand, cc, speed) {
+          // Call the super constructor to initialize the brand
+          super(brand);
+          this.cc = cc;
+          this.speed = speed;
+        }
+      }
+
+      const gurpreet = new Supercar("AMZ", 4000, 400);
+      // Since color is not a property of the Supercar class, this will log undefined
+      console.log(gurpreet.color);
+    </script>
+  </body>
+</html>
