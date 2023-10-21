@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags and title -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <!-- Include Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/405f53a43e.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="libraryManagementStyles.css">
+
+  <!-- Link to external JS file -->
+  <script src="libraryManagementScript.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <!-- Header Section -->
+    <div class="header-section">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light text-dark fw-bold fixed-top">
+        <div class="container-fluid">
+          <!-- Navbar brand/logo -->
+          <a class="navbar-brand" href="#"><img src="./assests/e-library-removebg-preview.png" alt="library"
+              class="navbar-img" /></a>
+          <!-- Navbar toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar items -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Borrowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Transactions</a>
+              </li>
+            </ul>
+            <!-- Search form -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search book name" aria-label="Search"
+                id="searchInput" onkeyup="handleKeyUp(event)">
+              <button class="btn btn-outline-primary" type="button" onclick="searchBooks()">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <!-- Main content will be here -->
+      <div class="featured-books-section">
+        <!-- Section title -->
+        <h2 class="text-center p-3">Featured Books</h2>
+
+        <!-- First row of cards -->
+        <div class="row card-row">
+          <!-- Card 1 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/Godan-Munshi-Premchand.jpg" class="card-img-top" alt="Godan-Munshi-Premchand" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: Godan Munshi Premchand</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: J Rantan and P.Lal</h5>
+                "Godan" by Munshi Premchand is a poignant portrayal of a
+                peasant named Hori and his unfulfilled desire to own a cow,
+                representing the struggles of marginalized farmers in
+                pre-independent India, exposing the complexities of societal
+                structures and the challenges faced by the rural poor.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)" data-book-name="Godan-Munshi-Premchand">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)" data-book-name="Godan-Munshi-Premchand">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/book-2.jpeg" class="card-img-top" alt="Book 2" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: HangWomen</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: K.R. Meera</h5>
+                The story revolves around the life of a young woman named
+                Chetna Grddha Mullick, who becomes the first female
+                executioner in India, exploring themes of gender, power, and
+                societal norms through a compelling narrative that delves
+                into the complexities of human existence.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)" data-book-name="Book 2">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)" data-book-name="Book 2">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/Midnight-children.jpg" class="card-img-top" alt="Midnight children" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: Midnight children</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: Salman Rushdie</h5>
+                The novel follows the life of Saleem Sinai, born at the
+                stroke of midnight on the day of India's independence, and
+                the intertwined destinies of children born at the same
+                time, reflecting the tumultuous journey of India
+                post-independence.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)" data-book-name="Midnight children">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)" data-book-name="Midnight children">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second row of cards -->
+        <div class="row card-row mb-5">
+          <!-- Card 4 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/Great-Indian-Novel.png" class="card-img-top" alt="Great Indian Novel" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: Great Indian Novel</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: Shashi Tharoor</h5>
+                "The Great Indian Novel" ingeniously weaves Indian
+                mythology, particularly the Mahabharata, with modern
+                political events, presenting a witty and critical account of
+                post-independence India's societal and political evolution
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)" data-book-name="Great Indian Novel">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)" data-book-name="Great Indian Novel">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/no-name-lane-howard-linskey.jpg" class="card-img-top" alt="No Name Lane" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: No Name Lane</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: Howard Linskey</h5>
+                A gripping psychological thriller that follows the mysterious
+                events in No Name Lane, uncovering dark secrets and sinister
+                truths that shake the foundations of a small, seemingly
+                tranquil town.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)" data-book-name="No Name Lane">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)" data-book-name="No Name Lane">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <img src="./assests/Raavan-Enemy-of-Aryavarta-Amish-Tripathi.jpg" class="card-img-top"
+                alt="Raavan: Enemy of Aryavarta" />
+              <div class="card-body">
+                <h5 class="card-title">Book Name: Raavan: Enemy of Aryavarta</h5>
+                <p class="card-text text-justify">
+                <h5 class="card-title">Author: Amish Tripathi</h5>
+                "Raavan: Enemy of Aryavarta" delves into the life and journey of the legendary antagonist from Indian
+                mythology, portraying his complex persona and the events that led to his transformation into one of the
+                most intriguing characters in the epic of Ramayana.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary" onclick="issueBook(this)"
+                  data-book-name="Raavan: Enemy of Aryavarta">Issue
+                  Book</button>
+                <button class="btn btn-danger" onclick="removeBook(this)"
+                  data-book-name="Raavan: Enemy of Aryavarta">Remove
+                  Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2023 Library Management System</p>
+  </footer>
+</body>
+
+</html>
