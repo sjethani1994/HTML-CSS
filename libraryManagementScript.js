@@ -6,6 +6,123 @@ function handleKeyUp(e) {
   }
 }
 
+const books = [
+  {
+    bookName: "Godan Munshi Premchand",
+    author: "J Rantan and P.Lal",
+    imagePath: "./assests/Godan-Munshi-Premchand.jpg",
+  },
+  {
+    bookName: "HangWomen",
+    author: "K.R. Meera",
+    imagePath: "./assests/book-2.jpeg",
+  },
+  {
+    bookName: "Midnight children",
+    author: "Salman Rushdie",
+    imagePath: "./assests/Midnight-children.jpg",
+  },
+  {
+    bookName: "Great Indian Novel",
+    author: "Shashi Tharoor",
+    imagePath: "./assests/Great-Indian-Novel.png",
+  },
+  {
+    bookName: "No Name Lane",
+    author: "Howard Linskey",
+    imagePath: "./assests/no-name-lane-howard-linskey.jpg",
+  },
+  {
+    bookName: "Raavan: Enemy of Aryavarta",
+    author: "Amish Tripathi",
+    imagePath: "./assests/Raavan-Enemy-of-Aryavarta-Amish-Tripathi.jpg",
+  },
+  {
+    bookName: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    imagePath: "./assests/the_catcher_in_the_rye.jpg",
+  },
+  {
+    bookName: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    imagePath: "./assests/to-kill-a-mockingbird-graphic-novel-1.jpg",
+  },
+  {
+    bookName: "1984",
+    author: "George Orwell",
+    imagePath: "./assests/1984.jpg",
+  },
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+  const booksContainer = document.querySelector(".featured-books-section");
+  let row;
+
+  books.forEach((book, index) => {
+    if (index % 3 === 0) {
+      // Create a new row for every third card
+      row = document.createElement("div");
+      row.classList.add("row");
+      booksContainer.appendChild(row);
+    }
+
+    const card = document.createElement("div");
+    card.classList.add("col-lg-4", "col-md-6", "mb-4");
+
+    const innerCard = document.createElement("div");
+    innerCard.classList.add("card");
+
+    const image = document.createElement("img");
+    image.classList.add("card-img-top");
+    image.setAttribute("src", book.imagePath);
+    image.setAttribute("alt", book.bookName);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const title = document.createElement("h5");
+    title.classList.add("card-title");
+    title.textContent = `Book Name: ${book.bookName}`;
+
+    const description = document.createElement("p");
+    description.classList.add("card-text", "text-justify");
+    description.textContent = book.description;
+
+    const author = document.createElement("h5");
+    author.classList.add("card-title");
+    author.textContent = `Author: ${book.author}`;
+
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer");
+
+    const issueButton = document.createElement("button");
+    issueButton.classList.add("btn", "btn-primary");
+    issueButton.textContent = "Issue Book";
+    issueButton.setAttribute("data-book-name", book.bookName);
+    issueButton.setAttribute("onclick", "issueBook(this)");
+
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("btn", "btn-danger");
+    removeButton.textContent = "Remove Book";
+    removeButton.setAttribute("data-book-name", book.bookName);
+    removeButton.setAttribute("onclick", "removeBook(this)");
+
+    cardBody.appendChild(title);
+    cardBody.appendChild(author);
+    cardBody.appendChild(description);
+    cardFooter.appendChild(issueButton);
+    cardFooter.appendChild(removeButton);
+
+    innerCard.appendChild(image);
+    innerCard.appendChild(cardBody);
+    innerCard.appendChild(cardFooter);
+
+    card.appendChild(innerCard);
+
+    row.appendChild(card);
+  });
+});
+
 // Function to search for books based on the input value
 function searchBooks() {
   let searchTerm = document.getElementById("searchInput").value.toLowerCase(); // Retrieve the search input value in lowercase
