@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table</title>
+    <!-- Bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS */
+        .user-avatar {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Avatar</th>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js CDN links (for certain Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://reqres.in/api/users', true);
+
+        xhr.onload = function () {
+            const responseData = JSON.parse(xhr.responseText);
+            const users = responseData.data;
+
+            const tableBody = document.getElementById('userTableBody');
+            users.forEach(user => {
+                const row = tableBody.insertRow(-1);
+                const imgCell = row.insertCell(0);
+                const img = document.createElement('img');
+                img.src = user.avatar;
+                img.classList.add('user-avatar');
+                imgCell.appendChild(img);
+                row.insertCell(1).innerText = user.id;
+                row.insertCell(2).innerText = user.email;
+                row.insertCell(3).innerText = user.first_name;
+                row.insertCell(4).innerText = user.last_name;
+            });
+        };
+
+        xhr.send();
+
+        /* POST REQUEST */
+        function sendPostRequest() {
+            const postRequest = new XMLHttpRequest();
+            const url = 'https://reqres.in/api/users'; // URL for the POST request
+
+            const data = {
+                name: 'John Doe',
+                job: 'Software Engineer'
+            };
+
+            postRequest.open('POST', url, true);
+            postRequest.setRequestHeader('Content-Type', 'application/json');
+
+            postRequest.onreadystatechange = function () {
+                if (postRequest.readyState === 4 && postRequest.status === 201) {
+                    const response = JSON.parse(postRequest.responseText);
+                    console.log(response);
+                }
+            };
+
+            postRequest.send(JSON.stringify(data));
+        }
+
+        sendPostRequest()
+    </script>
+</body>
+
+</html>
