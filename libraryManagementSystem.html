@@ -75,6 +75,31 @@
         <h2 class="text-center p-3">Featured Books</h2>
       </div>
     </div>
+
+    <div id="checkout" class="checkout-section mb-5">
+      <div class="checkout-details">
+        <div class="checkout-book">
+          <img src="" alt="Book Image" class="checkout-book-image" id="checkoutBookImage">
+          <div class="checkout-book-info">
+            <h2 class="checkout-book-title" id="checkoutBookTitle"></h2>
+            <p class="checkout-book-author" id="checkoutBookAuthor"></p>
+            <p class="checkout-book-description" id="checkoutBookDescription"></p>
+          </div>
+        </div>
+        <form class="checkout-form" id="checkoutForm">
+          <div class="mb-3">
+            <label for="checkoutName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="checkoutName" required>
+          </div>
+          <div class="mb-3">
+            <label for="checkoutEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="checkoutEmail" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Checkout</button>
+        </form>
+      </div>
+    </div>
+
   </div>
   <!-- Footer Section -->
   <footer>

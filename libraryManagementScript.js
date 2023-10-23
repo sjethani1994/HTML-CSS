@@ -54,20 +54,20 @@ const books = [
   },
 ];
 
+// display books and creating cards, rows, column for each book
 document.addEventListener("DOMContentLoaded", function () {
   const booksContainer = document.querySelector(".featured-books-section");
   let row;
 
   books.forEach((book, index) => {
     if (index % 3 === 0) {
-      // Create a new row for every third card
       row = document.createElement("div");
-      row.classList.add("row");
+      row.classList.add("row", "mb-5", "card-row");
       booksContainer.appendChild(row);
     }
 
     const card = document.createElement("div");
-    card.classList.add("col-lg-4", "col-md-6", "mb-4");
+    card.classList.add("col-lg-3", "col-md-6", "mb-4");
 
     const innerCard = document.createElement("div");
     innerCard.classList.add("card");
@@ -96,16 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
     cardFooter.classList.add("card-footer");
 
     const issueButton = document.createElement("button");
-    issueButton.classList.add("btn", "btn-primary");
+    issueButton.classList.add("btn", "btn-primary", "me-2");
     issueButton.textContent = "Issue Book";
     issueButton.setAttribute("data-book-name", book.bookName);
-    issueButton.setAttribute("onclick", "issueBook(this)");
+    issueButton.setAttribute("onclick", "issueBook()");
 
     const removeButton = document.createElement("button");
     removeButton.classList.add("btn", "btn-danger");
     removeButton.textContent = "Remove Book";
     removeButton.setAttribute("data-book-name", book.bookName);
-    removeButton.setAttribute("onclick", "removeBook(this)");
+    removeButton.setAttribute("onclick", "removeBook()");
 
     cardBody.appendChild(title);
     cardBody.appendChild(author);
@@ -150,37 +150,32 @@ function searchBooks() {
   }
 }
 
-function issueBook(button) {
-  let bookName = button.getAttribute("data-book-name");
-  console.log(bookName);
+function issueBook() {
+  const bookCards = document.querySelectorAll(".card");
+  const checkoutBookImage = document.getElementById("checkoutBookImage");
+  const checkoutBookTitle = document.getElementById("checkoutBookTitle");
+  const checkoutBookAuthor = document.getElementById("checkoutBookAuthor");
 
-  // Simulating an asynchronous process with a setTimeout function
-  setTimeout(function () {
-    // Simulating the book issuing process
-    console.log(`The book "${bookName}" has been issued.`);
-    // Perform necessary actions to indicate that the book has been issued
-
-    // For example, disable the button to indicate that the book has been issued
-    button.disabled = true;
-  }, 1000); // Simulating a 1-second delay before the book is issued
+  bookCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      checkoutBookImage.src = books[index].imagePath;
+      checkoutBookTitle.textContent = `Book Name: ${books[index].bookName}`;
+      checkoutBookAuthor.textContent = `Author: ${books[index].author}`;
+    });
+  });
 }
 
-function removeBook(button) {
-  let bookName = button.getAttribute("data-book-name");
-  console.log(bookName);
+function removeBook() {
+  const bookCards = document.querySelectorAll(".card");
+  const checkoutBookImage = document.getElementById("checkoutBookImage");
+  const checkoutBookTitle = document.getElementById("checkoutBookTitle");
+  const checkoutBookAuthor = document.getElementById("checkoutBookAuthor");
 
-  // Assuming you want to simulate an asynchronous process, using setTimeout here
-  setTimeout(function () {
-    // Simulate removing the book by updating the UI or sending a request to the server
-    console.log(`The book "${bookName}" has been removed.`);
-    // Update the UI or make a server request here
-
-    // For example, you can enable the "Issue Book" button to indicate that the book has been removed
-    let issueButton = document.querySelector(
-      `button[data-book-name="${bookName}"][class="btn btn-primary"]`
-    );
-    if (issueButton) {
-      issueButton.disabled = false;
-    }
-  }, 1000); // Simulating a 1-second delay before the book is removed
+  bookCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      checkoutBookImage.src = "";
+      checkoutBookTitle.textContent = ``;
+      checkoutBookAuthor.textContent = ``;
+    });
+  });
 }
