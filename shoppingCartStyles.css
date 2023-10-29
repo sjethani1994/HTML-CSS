@@ -65,6 +65,10 @@ body {
     height: 100px;
 }
 
+.badge {
+    left: 75%;
+}
+
 .sub-text {
     margin-top: 3px;
     margin-left: 100px;

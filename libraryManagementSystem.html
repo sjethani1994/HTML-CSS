@@ -76,27 +76,40 @@
       </div>
     </div>
 
-    <div id="checkout" class="checkout-section mb-5">
-      <div class="checkout-details">
-        <div class="checkout-book">
-          <img src="" alt="Book Image" class="checkout-book-image" id="checkoutBookImage">
-          <div class="checkout-book-info">
-            <h2 class="checkout-book-title" id="checkoutBookTitle"></h2>
-            <p class="checkout-book-author" id="checkoutBookAuthor"></p>
-            <p class="checkout-book-description" id="checkoutBookDescription"></p>
+    <div id="checkout" class="checkout-section">
+      <div class="row">
+        <div class="col-sm-12 col-lg-8">
+          <div class="checkout-details row">
+            <h4 id="book-count">Books Added : 0</h4>
+            <h4 id="total-Amount">Total Amount : 0</h4>
           </div>
         </div>
-        <form class="checkout-form" id="checkoutForm">
-          <div class="mb-3">
-            <label for="checkoutName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="checkoutName" required>
-          </div>
-          <div class="mb-3">
-            <label for="checkoutEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="checkoutEmail" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Checkout</button>
-        </form>
+        <div class="col-sm-12 col-lg-4">
+          <form class="checkout-form" id="checkoutForm">
+            <div class="mb-3">
+              <label for="checkoutName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="checkoutName" required>
+            </div>
+            <div class="mb-3">
+              <label for="checkoutEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="checkoutEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="checkoutAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="checkoutAddress" required>
+            </div>
+            <div class="mb-3">
+              <label for="checkoutCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="checkoutCity" required>
+            </div>
+            <div class="mb-3">
+              <label for="checkoutZip" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" id="checkoutZip" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Checkout</button>
+          </form>
+
+        </div>
       </div>
     </div>
 
