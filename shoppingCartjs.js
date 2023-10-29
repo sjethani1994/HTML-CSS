@@ -41,18 +41,23 @@ function displayProducts(products, container) {
                                  }" alt="Image" class="img-fluid" style="height: 240px;" />
                              </div>
                              <div class="col-md-7 custom-card-body">
-                                 <h5 class="card-title">${
+                                 <h5 class="card-title">Brand : ${
                                    products[i].brand
                                  }</h5>
-                                 <p class="card-text">${
+                                 <h5 class="card-title">category : ${
+                                   products[i].category
+                                 }</h5>
+                                 <p class="card-text">description : ${
                                    products[i].description
                                  }</p>
                                  <p class="card-text">Price: $${
                                    products[i].price
                                  }</p>
-                                 <button class="btn btn-outline-dark mt-3" onclick="handleClick(${
-                                   products[i].id
-                                 })">Read More</button>
+                                 <button class="btn btn-outline-success mt-3" onclick="addItem('${
+                                   products[i].brand
+                                 }', ${products[i].id}, ${
+      products[i].price
+    })">Add to Cart</button>
                              </div>
                          </div>
                      </div>
@@ -66,11 +71,6 @@ function displayProducts(products, container) {
       rowContent = "";
     }
   }
-}
-
-// Function to handle the click event
-function handleClick(id) {
-  console.log(id);
 }
 
 // Function to handle keyup event for search
@@ -90,7 +90,65 @@ function handleKeyUp(e) {
 
 // Function to search products based on the search key
 function searchProducts(searchKey, products) {
-  return products.filter((product) =>
-    product.title.toLowerCase().includes(searchKey.toLowerCase())
+  return products.filter(
+    (product) =>
+      product.title.toLowerCase().includes(searchKey.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchKey.toLowerCase())
   );
+}
+
+let cart = [];
+let totalPrice = 0;
+
+function addItem(brand, productId, price, image) {
+  cart.push({ name: brand, id: productId, price: price, image: image });
+  totalPrice += price;
+  updateCart();
+}
+
+function removeItem(index) {
+  totalPrice -= cart[index].price;
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const total = document.getElementById("totalPrice");
+
+  // Clear the cart items
+  while (cartItems.rows.length > 1) {
+    cartItems.deleteRow(1);
+  }
+
+  // Update the cart items
+  cart.forEach((item, index) => {
+    const product = productsList.find((product) => product.id === item.id);
+
+    const row = cartItems.insertRow(-1);
+
+    const imgCell = row.insertCell(0);
+    const nameCell = row.insertCell(1);
+    const priceCell = row.insertCell(2);
+    const actionCell = row.insertCell(3);
+
+    const img = document.createElement("img");
+    img.src = product.thumbnail;
+    img.alt = "Product Image";
+    img.style.width = "50px";
+    img.style.height = "50px";
+    imgCell.appendChild(img);
+
+    nameCell.textContent = item.name;
+
+    priceCell.textContent = `$${item.price}`;
+
+    const button = document.createElement("button");
+    button.setAttribute("class", "btn btn-outline-danger");
+    button.textContent = "Remove";
+    button.onclick = () => removeItem(index);
+    actionCell.appendChild(button);
+  });
+
+  total.textContent = totalPrice;
 }
