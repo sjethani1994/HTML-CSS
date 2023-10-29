@@ -1,0 +1,210 @@
+/* Reset margin and padding for the whole document */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a title="ShoppingGO"flex display to the body */
+body {
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+}
+
+/* Header Styles */
+.header-section {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive Header Styles */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+    }
+
+    .header-section .container-fluid {
+        text-align: center;
+        /* Center the text on small screens */
+        margin-top: 10px;
+        /* Add some spacing at the top */
+    }
+
+    .header-section ul {
+        list-style: none;
+        /* Remove list bullets */
+        padding: 0;
+    }
+
+    .header-section li {
+        margin-bottom: 10px;
+        /* Add spacing between list items */
+    }
+}
+
+.header-section-second {
+    background-color: #f3c231;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.badge {
+    left: 75%;
+}
+
+.sub-text {
+    margin-top: 3px;
+    margin-left: 100px;
+    font-size: 14px;
+}
+
+.search-container {
+    float: right;
+}
+
+input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    /* background: #ddd; */
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0%;
+}
+
+@media screen and (max-width: 600px) {
+    .search-container {
+        float: none;
+        margin-top: 10px;
+    }
+
+    a,
+    input[type="text"],
+    .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    input[type="text"] {
+        border: 1px solid #ccc;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-section-second ul {
+        flex-direction: column;
+        /* Stack items vertically */
+        margin-top: 10px;
+    }
+}
+
+.no-border-radius {
+    border-radius: 0 !important;
+    /* Use !important to ensure it takes precedence */
+}
+
+.phone-number {
+    position: relative;
+    font-size: 14px;
+    line-height: 0;
+    font-weight: 500;
+    vertical-align: baseline;
+    border: 0;
+    bottom: 0;
+}
+
+.call-us {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.indian-flag {
+    width: 20px;
+}
+
+.fa-headphones {
+    font-size: 40px;
+}
+
+.infoLinks {
+    font-size: 30px;
+}
+
+.carousel-img {
+    height: 400px;
+}
+
+.card-icons {
+    font-size: 55px;
+}
+
+.mens-card {
+    background-color: #c5f0ff;
+}
+
+.mens-card img {
+    height: 240px;
+}
+
+.cusotm-card-body {
+    padding: 20px;
+}
+
+.women-card {
+    background-color: #f9ccd1;
+}
+
+.women-card img {
+    float: right;
+    height: 240px;
+    width: 100%;
+}
+
+.kids-card {
+    background-color: #ffefc3;
+}
+
+.kids-card img {
+    height: 230px;
+    margin-top: 8px;
+    width: 90%;
+    margin-left: 11px;
+}
