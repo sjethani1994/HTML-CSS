@@ -50,7 +50,7 @@ function displayProducts(products, container) {
                                  <p class="card-text">description : ${
                                    products[i].description
                                  }</p>
-                                 <p class="card-text">Price: $${
+                                 <p class="card-text fw-bold">Price: $${
                                    products[i].price
                                  }</p>
                                  <button class="btn btn-outline-success mt-3" onclick="addItem('${
@@ -140,7 +140,6 @@ function updateCart() {
     imgCell.appendChild(img);
 
     nameCell.textContent = item.name;
-
     priceCell.textContent = `$${item.price}`;
 
     const button = document.createElement("button");
