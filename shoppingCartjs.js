@@ -148,8 +148,6 @@ function updateCart() {
 
   total.textContent = totalPrice;
   badgeCount.textContent = count;
-
-  openModal();
 }
 
 function openModal() {
