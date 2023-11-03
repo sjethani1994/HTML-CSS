@@ -1,6 +1,8 @@
 // Array to hold the products
 let productsList = [];
-
+let cart = [];
+let totalPrice = 0;
+let count = 0;
 // Function to fetch product data
 async function fetchData() {
   try {
@@ -9,13 +11,10 @@ async function fetchData() {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    const container = document.getElementById("productSection");
-
     productsList = data.products;
-    displayProducts(productsList, container);
+    displayProducts(productsList, document.getElementById("productSection"));
   } catch (error) {
     console.error("Rejected:", error);
-    throw error;
   }
 }
 
@@ -31,39 +30,37 @@ function displayProducts(products, container) {
       rowContent += `<div class="col-sm-0 col-lg-1"></div>`;
     }
     rowContent += `
-             <div class="col-sm-12 col-lg-3">
-                 <div class="card w-100">
-                     <div class="card-body">
-                         <div class="row">
-                             <div class="col-md-5 ${i === 0 ? "p-0" : ""}">
-                                 <img src="${
-                                   products[i].thumbnail
-                                 }" alt="Image" class="img-fluid" style="height: 240px;" />
-                             </div>
-                             <div class="col-md-7 custom-card-body">
-                                 <h5 class="card-title">Brand : ${
-                                   products[i].brand
-                                 }</h5>
-                                 <h5 class="card-title">category : ${
-                                   products[i].category
-                                 }</h5>
-                                 <p class="card-text">description : ${
-                                   products[i].description
-                                 }</p>
-                                 <p class="card-text fw-bold">Price: $${
-                                   products[i].price
-                                 }</p>
-                                 <button class="btn btn-outline-success mt-3" onclick="addItem('${
-                                   products[i].brand
-                                 }', ${products[i].id}, ${
-      products[i].price
-    })">Add to Cart</button>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         `;
+    <div class="col-sm-12 col-lg-3">
+        <div class="card w-100">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-5 ${i === 0 ? "p-0" : ""}">
+                        <img src="${
+                          products[i].thumbnail
+                        }" alt="Image" class="img-fluid" style="height: 240px;" />
+                    </div>
+                    <div class="col-md-7 custom-card-body">
+                        <h5 class="card-title">Brand : ${products[i].brand}</h5>
+                        <h5 class="card-title">Category : ${
+                          products[i].category
+                        }</h5>
+                        <p class="card-text">Description : ${
+                          products[i].description
+                        }</p>
+                        <p class="card-text fw-bold" style="padding-top: 18px;">Price: $${
+                          products[i].price
+                        }</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer" style="background-color: white;">
+            <button class="btn btn-outline-success mt-3" onclick="addItem('${
+              products[i].brand
+            }', ${products[i].id}, ${products[i].price})">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+`;
 
     if ((i + 1) % 3 === 0 || i === products.length - 1) {
       rowContent += `<div class="col-sm-0 col-lg-1"></div>`;
@@ -97,17 +94,17 @@ function searchProducts(searchKey, products) {
   );
 }
 
-let cart = [];
-let totalPrice = 0;
-
 function addItem(brand, productId, price, image) {
   cart.push({ name: brand, id: productId, price: price, image: image });
   totalPrice += price;
+  count += 1;
+  openModal();
   updateCart();
 }
 
 function removeItem(index) {
   totalPrice -= cart[index].price;
+  count -= 1;
   cart.splice(index, 1);
   updateCart();
 }
@@ -115,7 +112,7 @@ function removeItem(index) {
 function updateCart() {
   const cartItems = document.getElementById("cartItems");
   const total = document.getElementById("totalPrice");
-
+  const badgeCount = document.getElementById("badge-count");
   // Clear the cart items
   while (cartItems.rows.length > 1) {
     cartItems.deleteRow(1);
@@ -150,4 +147,13 @@ function updateCart() {
   });
 
   total.textContent = totalPrice;
+  badgeCount.textContent = count;
+}
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
 }
