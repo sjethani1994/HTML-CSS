@@ -11,13 +11,10 @@ async function fetchData() {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    const container = document.getElementById("productSection");
-
     productsList = data.products;
-    displayProducts(productsList, container);
+    displayProducts(productsList, document.getElementById("productSection"));
   } catch (error) {
     console.error("Rejected:", error);
-    throw error;
   }
 }
 
@@ -101,6 +98,7 @@ function addItem(brand, productId, price, image) {
   cart.push({ name: brand, id: productId, price: price, image: image });
   totalPrice += price;
   count += 1;
+  openModal();
   updateCart();
 }
 
