@@ -210,7 +210,6 @@ input[type="text"] {
 }
 
 /* The Modal */
-/* The Modal */
 .modal {
   display: none;
   position: fixed;
@@ -268,7 +267,7 @@ input[type="text"] {
 .close {
   color: #efe7e7;
   float: right;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   cursor: pointer;
 }
