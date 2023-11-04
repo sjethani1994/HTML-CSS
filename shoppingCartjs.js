@@ -57,6 +57,10 @@ function displayProducts(products, container) {
             <button class="btn btn-outline-success mt-3" onclick="addItem('${
               products[i].brand
             }', ${products[i].id}, ${products[i].price})">Add to Cart</button>
+            <button class="btn btn-outline-dark mt-3" onclick="viewItem('${encodeURIComponent(
+              JSON.stringify(products[i])
+            )}')" style="float: inline-end;">View Details</button>
+
             </div>
         </div>
     </div>
@@ -156,4 +160,31 @@ function openModal() {
 
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
+}
+
+function viewItem(currentProductDetails) {
+  const decodedProductDetails = decodeURIComponent(currentProductDetails);
+  const product = JSON.parse(decodedProductDetails);
+  const modalBody = document.getElementById("productDetails");
+  let imageSource = product.thumbnail;
+  if (product.brand.toLowerCase() === "luxury palace") {
+    imageSource = product.images[0];
+  }
+
+  modalBody.innerHTML = `
+    <div class="product-card">
+    <img src="${imageSource}" alt="Product Image" class="product-image" />
+      <div class="product-details p-2">
+        <h3>${product.title}</h3>
+        <p style="font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><span style="font-weight: 500;">Description:</span> ${product.description}</p>
+        <p style="font-size: 18px;"><span style="font-weight: 500;">Price:</span> $${product.price}</p>
+      </div>
+      <button class="btn btn-outline-success mt-3" onclick="addItem('${product.brand}', ${product.id}, ${product.price})">Add to Cart</button>
+    </div>
+  `;
+  document.getElementById("viewItemModal").style.display = "block";
+}
+
+function closeViewModal() {
+  document.getElementById("viewItemModal").style.display = "none";
 }
